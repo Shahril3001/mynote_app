@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons start>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>View Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-card class="profiledetail">
+	<ion-card-content>
+		<h1>Profile</h1><hr>
+		<h3><b>Name:</b> {{ contact.name }}</h3>
+		<h3><b>Contact:</b> {{ contact.phone }}</h3>
+		<h3><b>Email:</b> {{ contact.email }}</h3>
+		<h3><b>Address:</b> {{ contact.address }}</h3>
+	</ion-card-content>
+</ion-card>
+<button ion-button block class="backpage" (click)="onLoadContact()">Back</button>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons end>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>Add Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+	<form #f="ngForm" (ngSubmit)="addContact(f)"> 
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Name</ion-label>
+				<ion-input type="text" name="contactName" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Phone</ion-label>
+				<ion-input type="text" name="contactPhone" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Email</ion-label>
+				<ion-input type="text" name="contactEmail" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Address</ion-label>
+				<ion-textarea name="contactAddress" ngModel required></ion-textarea>
+			</ion-item>
+		</ion-list>
+
+		<button ion-button class="buttonpage" type="submit" block [disabled]="!f.valid">Add</button>
+	</form>
+</ion-content>

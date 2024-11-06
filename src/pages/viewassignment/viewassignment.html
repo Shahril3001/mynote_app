@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>View Assignment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-card class="assigndetail">
+	<ion-card-content>
+		<h1>Assignment Detail</h1><hr>
+		<h2><b>Title: {{ assign.title}}</b></h2>
+		<h3><b>Module:</b> {{ assign.module }}</h3>
+		<h3><b>Date: </b>{{ assign.date }}</h3>
+		<progress-bar class="progressbar" [progress]="assign.progress"></progress-bar><br>
+	
+		<h3 class="assigndesc"><b>Description:</b><br> {{ assign.description }}</h3>
+	</ion-card-content>
+</ion-card>
+ <button ion-button block class="backpage" (click)="onLoadAssignment()">Back</button>
+</ion-content>

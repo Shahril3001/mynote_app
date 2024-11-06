@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons end>
+      <button ion-button icon-only (click)="addNewContact()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+<ion-list>
+ <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredItems()"
+  ></ion-searchbar>
+</ion-list>	
+<ion-list *ngIf="showcontact">
+		<ion-item-sliding class="slide" *ngFor =" let contact of showcontact; let i = index" >
+			<ion-item>
+			<ion-icon  item-left class="profileimg" name="md-contact"></ion-icon>
+			<h2>{{ contact.name}}</h2>
+			<p><b>Tel:</b> {{ contact.phone}}</p>
+			<p><b>Email:</b> {{ contact.email}}</p>
+		</ion-item>
+		<ion-item-options>
+			<button ion-button class="view" (click)="viewContact(contact, i)">
+				<ion-icon name="md-eye"></ion-icon>
+			</button>
+			<button ion-button class="edit" (click)="editContact(contact, i)">
+				<ion-icon name="create"></ion-icon>
+			</button>
+			<button ion-button class="delete" (click)="deleteContact(i)">
+				<ion-icon name="trash"></ion-icon>
+			</button>
+		</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

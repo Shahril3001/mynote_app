@@ -1,0 +1,36 @@
+.light-theme {
+  ion-content {
+    background-color: #f5ffce;
+  }
+ 
+  .toolbar-background {
+    background-color: #efe04a;
+  }
+
+.slide{
+	border: 1px solid #d1d1d1;
+}
+
+ .profileimg{
+     font-size: 60px;
+  }
+
+  .backpage {
+    width:98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+    .noteimg{
+     font-size:45px;
+  }
+  .view {
+    background-color:#32db64;
+  }
+  .edit {
+    background-color:#ffd800;
+  }
+   .delete {
+    background-color:#ef1c1c;
+  }
+}

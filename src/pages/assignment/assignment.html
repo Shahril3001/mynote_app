@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+  	 <ion-title>Assignment</ion-title>
+  	<ion-buttons end>
+      <button ion-button icon-only (click)="addNewAssignment()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+<ion-list>
+	 <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredItems()"
+  ></ion-searchbar>
+</ion-list>	
+<ion-list *ngIf="showassign">
+		<ion-item-sliding class="slide" *ngFor =" let assign of showassign; let i = index" >
+		<ion-item>
+			<ion-icon  item-left class="noteimg" name="md-document"></ion-icon>
+			<h3>{{i+1}}. {{ assign.title | uppercase}}</h3>
+			<progress-bar [progress]="assign.progress"></progress-bar>
+		</ion-item>
+		<ion-item-options>
+			<button ion-button class="view" (click)="viewAssignment(assign, i)">
+				<ion-icon name="md-eye"></ion-icon>
+			</button>
+			<button ion-button class="edit" (click)="editAssignment(assign, i)">
+				<ion-icon name="create"></ion-icon>
+			</button>
+			<button ion-button class="delete" (click)="deleteAssignment(i)">
+				<ion-icon name="trash"></ion-icon>
+			</button>
+		</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

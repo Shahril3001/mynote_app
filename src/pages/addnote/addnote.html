@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons end>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>Add Note</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+	<form #f="ngForm" (ngSubmit)="addNote(f)"> 
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Title</ion-label>
+				<ion-input type="text" name="noteTitle" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Content</ion-label>
+				<ion-textarea name="noteContent" ngModel required></ion-textarea>
+			</ion-item>	
+		</ion-list>
+
+		<button ion-button class="buttonpage" type="submit" block [disabled]="!f.valid">Add</button>
+	</form>
+</ion-content>

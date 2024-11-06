@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons end>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>Add Assignment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+	<form #f="ngForm" (ngSubmit)="addAssignment(f)"> 
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Title</ion-label>
+				<ion-input type="text" name="asTitle" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Module</ion-label>
+				<ion-input type="text" name="asModule" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="date" name="asDate" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Progress</ion-label>
+				<ion-input type="number" name="asProgress" minlength="0" maxlength="100" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Description</ion-label>
+				<ion-textarea name="asDesc" ngModel required></ion-textarea>
+			</ion-item>
+		</ion-list>
+
+		<button ion-button class="buttonpage" type="submit" block [disabled]="!f.valid">Add</button>
+	</form>
+</ion-content>

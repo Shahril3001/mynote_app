@@ -1,0 +1,54 @@
+.dark-theme {
+  ion-content {
+    background-color: #afafaf;
+    color: #fff;
+  }
+ 
+  .toolbar-title{
+    color: #fff;
+  }
+ 
+  .toolbar-background {
+    border-color: #ff0fff;
+    background-color: #3a3a3a;
+  }
+
+  .buttonpage {
+    background-color: #050404;
+  }
+
+   .backpage {
+    background-color: #050404;
+    width:98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+   .icon {
+    color: #fff;
+  }
+
+  .profileimg{
+     color: black;
+     font-size:55px;
+  }
+
+  .noteimg{
+     color: black;
+     font-size:45px;
+  }
+
+  .slide{
+  border: 1px solid #d1d1d1;
+  }
+
+   .view {
+    background-color:#32db64;
+  }
+  .edit {
+    background-color:#ffd800;
+  }
+   .delete {
+    background-color:#ef1c1c;
+  }
+}  

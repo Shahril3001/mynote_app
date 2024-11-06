@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+  	 <ion-title>Note</ion-title>
+  	<ion-buttons end>
+      <button ion-button icon-only (click)="addNewNote()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="note">
+<ion-list>
+	 <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="setFilteredItems()"
+  ></ion-searchbar>
+	</ion-list>	
+	<ion-list>
+		<ion-item-sliding class="slide" *ngFor =" let note of shownote; let i = index">
+			<ion-item>
+			<ion-icon  item-left class="noteimg" name="md-list-box"></ion-icon>
+			<h2><b>{{i+1}}. {{ note.title | uppercase }}</b></h2>
+			<p><b>Content:</b> {{ note.content }}</p>
+		</ion-item>
+		<ion-item-options>
+			<button ion-button class="view"  (click)="viewNote(note, i)">
+				<ion-icon name="md-eye"></ion-icon>
+			</button>
+			<button ion-button class="edit" (click)="editNote(note, i)">
+				<ion-icon name="create"></ion-icon>
+			</button>
+			<button ion-button class="delete" (click)="deleteNote(i)">
+				<ion-icon name="trash"></ion-icon>
+			</button>
+		</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

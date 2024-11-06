@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons end>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>Edit Assignment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form #f="ngForm" (ngSubmit)="editAssignment(f)"> 
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Title</ion-label>
+				<ion-input type="text" name="newasTitle" ngModel="{{ assign.title }}" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Module</ion-label>
+				<ion-input type="text" name="newasModule" ngModel="{{ assign.modules }}" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="date" name="newasDate" ngModel="{{ assign.date }}" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Progress</ion-label>
+				<ion-input type="number" name="newasProgress" minlength="0" maxlength="100" ngModel="{{ assign.progress }}"required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>Description</ion-label>
+				<ion-textarea name="newasDesc" ngModel="{{ assign.description }}" required></ion-textarea>
+			</ion-item>
+		</ion-list>
+
+		<button ion-button class="buttonpage" type="submit" block [disabled]="!f.valid">Edit</button>
+	</form>
+</ion-content>
