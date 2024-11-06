@@ -1,4 +1,4 @@
-# Student’s Note App
+# Student’s Note App (Ionic Framework)
 Student’s Note App is an application that acts as a guide for students to use in their daily day activities at their school/university. The application provides features such as adding, deleting and editing notes, adding a timetable, having a reminder for assignments, practical and tutorials submissions and more.
 
 ## Feature	Description
@@ -10,3 +10,7 @@ Student’s Note App is an application that acts as a guide for students to use 
 - Contact Management - Users can add information about people. Information such as their names, phone number and email address.
 - Slide feature	- Users can slide to edit, delete and view entries added.
 - Change Theme - Provide ability to change the application’s theme color in mobile application.
+
+## Disclaimer
+// Disclaimer: This code is implemented using Ionic 3, an older version of the Ionic framework. Some features, dependencies, or syntax may differ in newer versions (Ionic 4+), which could affect compatibility and functionality.
+
